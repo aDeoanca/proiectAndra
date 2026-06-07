@@ -1,0 +1,16 @@
+Project Specification: Purchase Order (PO) Management  System 
+1. Project Objective 
+You are working in a rapidly growing company where the need is to automate the historically  chaotic, manual, and paper-based process of company purchasing and procurement. As a  developer on the internal tools team, your objective is to build a full-stack web application  that facilitates the creation, approval, and invoicing of Purchase Orders. 
+While this document outlines the minimum core requirements, you are free to add any other  functionality you feel would improve the user experience or make the system more robust. 
+2. Technology Stack 
+While you are free to design the exact architecture, you are highly encouraged to use the  following recommended tech stack: 
+• Database: PostgreSQL (Relational database to persist data). 
+• Frontend UI: Next.js (React framework for the client-side interface). 
+• Backend: You may choose one of the following for your server-side application to  handle business logic and APIs: NestJS, Python, Java 
+3. Core Business Process 
+The application must support the lifecycle of a Purchase Order through the following stages.  Pay close attention to the conditional routing and rejection paths: 
+1. Creation: A user submits a new Purchase Order, which must include the requested  amount and the category (e.g., Services, Office Supplies, IT Equipment). 
+2. Manager Approval: A user with manager privileges reviews the PO. Note: If the total amount of the PO is less than 100 USD, the system should  automatically bypass this step and move the PO to the next applicable stage. 
+3. IT Validation: If the PO is categorized as "IT Equipment", it must be routed to an IT  Representative for technical validation. If it is not equipment, this step is skipped  entirely. 
+4. Financial Approval: A user with finance privileges reviews and approves the PO. 5. Invoicing: The fully approved PO is marked as invoiced/completed.
+6. The Rejection Loop: At any approval stage (Manager, IT, or Finance), the reviewer  must have the option to Reject the PO. If rejected, the status changes to "Needs  Rework" and the PO is returned to the original creator. The creator can then edit the  details and resubmit it, which restarts the approval process from the beginning.

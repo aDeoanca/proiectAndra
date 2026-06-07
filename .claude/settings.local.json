@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(java *)",
+      "PowerShell(javac *)",
+      "PowerShell(Test-Path *)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\Eclipse Adoptium\" -Directory | Select-Object Name; Write-Output \"---USER JAVA_HOME---\"; [Environment]::GetEnvironmentVariable\\(\"JAVA_HOME\",\"User\"\\); Write-Output \"---MACHINE JAVA_HOME---\"; [Environment]::GetEnvironmentVariable\\(\"JAVA_HOME\",\"Machine\"\\))",
+      "PowerShell([Environment]::SetEnvironmentVariable\\(\"JAVA_HOME\",\"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-17.0.16.8-hotspot\",\"User\"\\); Write-Output \"Set. Verifying \\(new value\\):\"; [Environment]::GetEnvironmentVariable\\(\"JAVA_HOME\",\"User\"\\); Write-Output \"javac present at target:\"; Test-Path \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-17.0.16.8-hotspot\\\\bin\\\\javac.exe\")",
+      "Bash(git init *)",
+      "Bash(git --version)",
+      "Bash(npx skills@latest *)"
+    ]
+  }
+}
