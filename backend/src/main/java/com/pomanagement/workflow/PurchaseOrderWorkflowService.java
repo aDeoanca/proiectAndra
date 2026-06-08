@@ -38,8 +38,8 @@ public class PurchaseOrderWorkflowService {
     public void approve(PurchaseOrder po, User actor) {
         Status current = po.getStatus();
         guardPendingState(current);
-        guardRoleOwns(current, actor);
         guardNoSelfApproval(po, actor);
+        guardRoleOwns(current, actor);
 
         Stage completed = WorkflowRouter.stageOf(current);
         Status next = WorkflowRouter.nextStateAfter(po, completed);
@@ -50,8 +50,8 @@ public class PurchaseOrderWorkflowService {
     public void reject(PurchaseOrder po, User actor, String comment) {
         Status current = po.getStatus();
         guardPendingState(current);
-        guardRoleOwns(current, actor);
         guardNoSelfApproval(po, actor);
+        guardRoleOwns(current, actor);
         guardNonBlankComment(comment);
 
         po.setStatus(Status.NEEDS_REWORK);

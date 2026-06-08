@@ -11,7 +11,7 @@
 - `amount` column `NUMERIC(12,2)` with `CHECK (amount > 0)`.
 - `currency` defaults to `'USD'`.
 - Keep enums as `VARCHAR` columns (matching `@Enumerated(STRING)`), not Postgres enum types, to avoid migration friction.
-- Depends on **POM-01-02** (entities define the shape the migration must match).
+- Depends on **POM-5** (entities define the shape the migration must match).
 
 ## Acceptance
 

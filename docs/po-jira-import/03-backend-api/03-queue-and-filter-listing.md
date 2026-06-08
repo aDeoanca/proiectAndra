@@ -14,7 +14,7 @@
 
 - `queue=me` must exclude POs the caller created (mirrors the no-self-approval rule) so reviewers don't see their own items in their action queue.
 - Implement with Spring Data derived queries or a small `Specification`; no need for full pagination at this scope (note the cap if one is applied).
-- Depends on **POM-04-02** (current-user) and **POM-01-02** (entities/repos).
+- Depends on **POM-18** (current-user) and **POM-5** (entities/repos).
 
 ## Acceptance
 

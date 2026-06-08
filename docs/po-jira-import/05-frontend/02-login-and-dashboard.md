@@ -10,9 +10,9 @@
 
 ## Notes
 
-- The two sections are driven entirely by the backend filters (POM-03-03) — no client-side state derivation.
+- The two sections are driven entirely by the backend filters (POM-14) — no client-side state derivation.
 - A pure CREATOR sees only "My purchase orders"; reviewers see both.
-- Depends on **POM-05-01** (client/auth) and **POM-03-03** (queue listing).
+- Depends on **POM-20** (client/auth) and **POM-14** (queue listing).
 
 ## Acceptance
 

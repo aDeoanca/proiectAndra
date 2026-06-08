@@ -14,4 +14,4 @@ Auth cuts across the API (Story 3 needs "who is the caller") and the frontend (S
 - Protected `/api/pos/**` endpoints return `401` without a valid session.
 - The current user is resolvable in controllers/services (the actor passed to the workflow service).
 - Any authenticated user can create a PO; reviewing is gated by role (enforced in the workflow service, supplied here).
-- Depends on Story **POM-01** (seeded users) and feeds Story **POM-03** (API) and **POM-05** (frontend).
+- Depends on Story **POM-3** (seeded users) and feeds Story **POM-11** (API) and **POM-19** (frontend).

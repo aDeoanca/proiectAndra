@@ -14,7 +14,7 @@
 
 - This is what makes the workflow service's typed exceptions HTTP-correct without coupling the service to the web layer.
 - The frontend (Story 5) keys off `code` for user-facing messages.
-- Depends on **POM-02-02** (defines the exception types).
+- Depends on **POM-9** (defines the exception types).
 
 ## Acceptance
 

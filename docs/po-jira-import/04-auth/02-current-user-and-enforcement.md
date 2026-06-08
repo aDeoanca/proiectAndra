@@ -11,7 +11,7 @@
 
 - Keep it minimal — Spring Security with a custom session filter, or a plain `OncePerRequestFilter`. No JWT, no method-level `@PreAuthorize` needed since the workflow service owns authorization.
 - Anyone authenticated can create; role only gates reviewing.
-- Depends on **POM-04-01** (session) and **POM-02-02** (the guards it feeds).
+- Depends on **POM-17** (session) and **POM-9** (the guards it feeds).
 
 ## Acceptance
 

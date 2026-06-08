@@ -7,13 +7,13 @@
 - **Context-aware actions**, shown only when legal for the current user:
   - Reviewer owning the current state → **Approve** and **Reject** (reject opens a required-comment dialog).
   - Creator when status is `NEEDS_REWORK` → **Edit** (→ form) and **Resubmit**.
-- Actions call the verb endpoints (POM-03-02), then invalidate the relevant queries so the detail + dashboard refresh.
+- Actions call the verb endpoints (POM-13), then invalidate the relevant queries so the detail + dashboard refresh.
 
 ## Notes
 
 - The client decides which buttons to show from `currentUser.role` + `po.status` + creator, but the backend remains the authority (it will `403`/`409` an illegal attempt, surfaced as a toast).
 - Reject button must block submit until a non-empty comment is entered (mirrors backend rule).
-- Depends on **POM-05-01** and **POM-03-02**.
+- Depends on **POM-20** and **POM-13**.
 
 ## Acceptance
 

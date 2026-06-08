@@ -11,7 +11,7 @@
 
 - Testcontainers needs a Docker daemon in dev/CI (ADR-0004).
 - Use `BigDecimal` literals in the boundary tests to lock the strict `< 100` rule.
-- Depends on Stories **POM-02** and **POM-03**.
+- Depends on Stories **POM-7** and **POM-11**.
 
 ## Acceptance
 

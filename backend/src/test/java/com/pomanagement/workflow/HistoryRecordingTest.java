@@ -1,5 +1,6 @@
 package com.pomanagement.workflow;
 
+import com.pomanagement.AbstractDataJpaTest;
 import com.pomanagement.config.JpaConfig;
 import com.pomanagement.domain.entity.PoHistory;
 import com.pomanagement.domain.entity.PurchaseOrder;
@@ -12,11 +13,8 @@ import com.pomanagement.workflow.exception.ForbiddenActionException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.context.annotation.Import;
-import org.springframework.test.context.TestPropertySource;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -24,16 +22,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Import({JpaConfig.class, JpaPoHistoryRecorder.class, PurchaseOrderWorkflowService.class})
-@TestPropertySource(properties = {
-        "spring.datasource.url=jdbc:postgresql://localhost:5432/pomanagement",
-        "spring.datasource.username=postgres",
-        "spring.datasource.password=postgres",
-        "spring.flyway.enabled=true"
-})
-class HistoryRecordingTest {
+class HistoryRecordingTest extends AbstractDataJpaTest {
 
     @Autowired
     private TestEntityManager em;

@@ -11,7 +11,7 @@
 
 - Append-only: no update or delete paths on `po_history`.
 - `fromStatus` is null for the initial `SUBMIT`.
-- Depends on **POM-02-02** (workflow service calls the recorder).
+- Depends on **POM-9** (workflow service calls the recorder).
 
 ## Acceptance
 

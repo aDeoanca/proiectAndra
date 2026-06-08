@@ -10,9 +10,9 @@
 
 ## Notes
 
-- `fetch` must use `credentials: 'include'`; configure the backend CORS to allow the frontend origin with credentials (pairs with POM-04-01).
+- `fetch` must use `credentials: 'include'`; configure the backend CORS to allow the frontend origin with credentials (pairs with POM-17).
 - Keep enum string values identical to the backend.
-- Depends on **POM-03** (contract) and **POM-04-01** (auth endpoints).
+- Depends on **POM-11** (contract) and **POM-17** (auth endpoints).
 
 ## Acceptance
 

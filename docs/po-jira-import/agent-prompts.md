@@ -11,218 +11,218 @@ Foundations → Workflow engine → **Auth (before the API)** → Backend API �
 
 ---
 
-## Story 1 — Foundations & domain model (POM-01)
+## Story 1 — Foundations & domain model (POM-3)
 
-### POM-01-01 · Monorepo scaffold and Dockerised Postgres
+### POM-4 · Monorepo scaffold and Dockerised Postgres
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-01-01
+Ticket: POM-4
 Spec: docs/po-jira-import/01-foundations/01-monorepo-and-docker-postgres.md
 ```
 
-### POM-01-02 · JPA entities and enums
+### POM-5 · JPA entities and enums
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-01-02
+Ticket: POM-5
 Spec: docs/po-jira-import/01-foundations/02-entities-and-enums.md
 ```
 
-### POM-01-03 · Flyway baseline migration and seed data
+### POM-6 · Flyway baseline migration and seed data
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-01-03
+Ticket: POM-6
 Spec: docs/po-jira-import/01-foundations/03-flyway-schema-and-seed.md
 ```
 
-### POM-01 · Foundations & domain model (story-level verification)
+### POM-3 · Foundations & domain model (story-level verification)
 
 ```
 Verify the story's acceptance criteria are met. Read CLAUDE.md first, then the spec.
-Ticket: POM-01
+Ticket: POM-3
 Spec: docs/po-jira-import/01-foundations/description.md
 ```
 
 ---
 
-## Story 2 — Workflow engine (POM-02)
+## Story 2 — Workflow engine (POM-7)
 
-### POM-02-01 · Pure routing function
+### POM-8 · Pure routing function
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-02-01
+Ticket: POM-8
 Spec: docs/po-jira-import/02-workflow-engine/01-routing-function.md
 ```
 
-### POM-02-02 · PurchaseOrderWorkflowService and guards
+### POM-9 · PurchaseOrderWorkflowService and guards
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-02-02
+Ticket: POM-9
 Spec: docs/po-jira-import/02-workflow-engine/02-workflow-service-and-guards.md
 ```
 
-### POM-02-03 · Append-only history recording
+### POM-10 · Append-only history recording
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-02-03
+Ticket: POM-10
 Spec: docs/po-jira-import/02-workflow-engine/03-history-recording.md
 ```
 
-### POM-02 · Workflow engine (story-level verification)
+### POM-7 · Workflow engine (story-level verification)
 
 ```
 Verify the story's acceptance criteria are met. Read CLAUDE.md first, then the spec.
-Ticket: POM-02
+Ticket: POM-7
 Spec: docs/po-jira-import/02-workflow-engine/description.md
 ```
 
 ---
 
-## Story 4 — Auth & roles (POM-04) — do this before the API
+## Story 4 — Auth & roles (POM-16) — do this before the API
 
-### POM-04-01 · Session login endpoints and user picker
+### POM-17 · Session login endpoints and user picker
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-04-01
+Ticket: POM-17
 Spec: docs/po-jira-import/04-auth/01-session-login-endpoints.md
 ```
 
-### POM-04-02 · Current-user resolution and access enforcement
+### POM-18 · Current-user resolution and access enforcement
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-04-02
+Ticket: POM-18
 Spec: docs/po-jira-import/04-auth/02-current-user-and-enforcement.md
 ```
 
-### POM-04 · Auth & roles (story-level verification)
+### POM-16 · Auth & roles (story-level verification)
 
 ```
 Verify the story's acceptance criteria are met. Read CLAUDE.md first, then the spec.
-Ticket: POM-04
+Ticket: POM-16
 Spec: docs/po-jira-import/04-auth/description.md
 ```
 
 ---
 
-## Story 3 — Backend API (POM-03)
+## Story 3 — Backend API (POM-11)
 
-### POM-03-04 · Global error handling
+### POM-15 · Global error handling
 
 > Do this first within the story — the other endpoints rely on the exception → HTTP mapping.
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-03-04
+Ticket: POM-15
 Spec: docs/po-jira-import/03-backend-api/04-error-handling.md
 ```
 
-### POM-03-01 · PO CRUD endpoints, DTOs, and validation
+### POM-12 · PO CRUD endpoints, DTOs, and validation
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-03-01
+Ticket: POM-12
 Spec: docs/po-jira-import/03-backend-api/01-po-crud-endpoints.md
 ```
 
-### POM-03-02 · Workflow action endpoints
+### POM-13 · Workflow action endpoints
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-03-02
+Ticket: POM-13
 Spec: docs/po-jira-import/03-backend-api/02-workflow-action-endpoints.md
 ```
 
-### POM-03-03 · Queue and filter listing
+### POM-14 · Queue and filter listing
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-03-03
+Ticket: POM-14
 Spec: docs/po-jira-import/03-backend-api/03-queue-and-filter-listing.md
 ```
 
-### POM-03 · Backend API (story-level verification)
+### POM-11 · Backend API (story-level verification)
 
 ```
 Verify the story's acceptance criteria are met. Read CLAUDE.md first, then the spec.
-Ticket: POM-03
+Ticket: POM-11
 Spec: docs/po-jira-import/03-backend-api/description.md
 ```
 
 ---
 
-## Story 5 — Frontend (POM-05)
+## Story 5 — Frontend (POM-19)
 
-### POM-05-01 · Next.js scaffold, API client, and query setup
+### POM-20 · Next.js scaffold, API client, and query setup
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-05-01
+Ticket: POM-20
 Spec: docs/po-jira-import/05-frontend/01-scaffold-and-api-client.md
 ```
 
-### POM-05-02 · Login, switch-user, and role-aware dashboard
+### POM-21 · Login, switch-user, and role-aware dashboard
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-05-02
+Ticket: POM-21
 Spec: docs/po-jira-import/05-frontend/02-login-and-dashboard.md
 ```
 
-### POM-05-03 · PO detail with timeline and contextual actions
+### POM-22 · PO detail with timeline and contextual actions
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-05-03
+Ticket: POM-22
 Spec: docs/po-jira-import/05-frontend/03-po-detail-and-timeline.md
 ```
 
-### POM-05-04 · Shared create / edit form
+### POM-23 · Shared create / edit form
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-05-04
+Ticket: POM-23
 Spec: docs/po-jira-import/05-frontend/04-create-edit-form.md
 ```
 
-### POM-05 · Frontend (story-level verification)
+### POM-19 · Frontend (story-level verification)
 
 ```
 Verify the story's acceptance criteria are met. Read CLAUDE.md first, then the spec.
-Ticket: POM-05
+Ticket: POM-19
 Spec: docs/po-jira-import/05-frontend/description.md
 ```
 
 ---
 
-## Story 6 — Testing & ops (POM-06)
+## Story 6 — Testing & ops (POM-24)
 
-### POM-06-01 · Backend test suite (Testcontainers)
+### POM-25 · Backend test suite (Testcontainers)
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-06-01
+Ticket: POM-25
 Spec: docs/po-jira-import/06-testing-and-ops/01-backend-test-suite.md
 ```
 
-### POM-06-02 · Frontend smoke test and dev runbook
+### POM-26 · Frontend smoke test and dev runbook
 
 ```
 Implement this ticket. Read CLAUDE.md first, then the spec, follow the invariants, run the acceptance checks, and stop before committing.
-Ticket: POM-06-02
+Ticket: POM-26
 Spec: docs/po-jira-import/06-testing-and-ops/02-frontend-smoke-and-runbook.md
 ```
 
-### POM-06 · Testing & ops (story-level verification)
+### POM-24 · Testing & ops (story-level verification)
 
 ```
 Verify the story's acceptance criteria are met. Read CLAUDE.md first, then the spec.
-Ticket: POM-06
+Ticket: POM-24
 Spec: docs/po-jira-import/06-testing-and-ops/description.md
 ```

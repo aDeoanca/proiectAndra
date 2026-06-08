@@ -10,7 +10,7 @@
 
 - Frontend testing is deliberately light per ADR-0004 — don't build out heavy component/E2E coverage.
 - The runbook should let a fresh clone reach a working app by copy-paste.
-- Depends on **POM-05** (frontend) and **POM-01-01** (compose/runbook surface).
+- Depends on **POM-19** (frontend) and **POM-4** (compose/runbook surface).
 
 ## Acceptance
 

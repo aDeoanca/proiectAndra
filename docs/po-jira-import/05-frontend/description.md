@@ -15,4 +15,4 @@ It's the full client tier and depends on a stable API (Story 3) and auth (Story 
 - PO detail shows all fields, a chronological timeline from `po_history`, and context-aware action buttons.
 - A creator can create a PO and, when it is `NEEDS_REWORK`, edit and resubmit it via the shared form.
 - Server state goes through TanStack Query; forms validate with Zod before submitting.
-- Depends on Story **POM-03** (API) and **POM-04** (auth).
+- Depends on Story **POM-11** (API) and **POM-16** (auth).

@@ -12,7 +12,7 @@
 
 - Strict boundary: `amount < 100` bypasses Manager; exactly `100.00` requires it. Use `BigDecimal.compareTo`, not `equals`.
 - Pure and side-effect free — this is the unit-test crown jewel (full matrix tested in Story 6).
-- Depends on **POM-01-02** (enums).
+- Depends on **POM-5** (enums).
 
 ## Acceptance
 

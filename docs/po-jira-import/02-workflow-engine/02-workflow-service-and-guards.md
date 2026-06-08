@@ -16,9 +16,9 @@
 
 ## Notes
 
-- Service mutates the `PurchaseOrder` and delegates history writes to the recorder (POM-02-03).
+- Service mutates the `PurchaseOrder` and delegates history writes to the recorder (POM-10).
 - The frontend never computes transitions — this service is the single source of truth.
-- Depends on **POM-02-01** (router).
+- Depends on **POM-8** (router).
 
 ## Acceptance
 

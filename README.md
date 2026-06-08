@@ -12,9 +12,6 @@ as *Needs Rework* and restart approval on resubmit.
 See [`docs/design.md`](./docs/design.md) for the full design and [`docs/adr/`](./docs/adr)
 for the key decisions.
 
-> **Status:** Design complete; application code is not scaffolded yet. The setup below
-> describes the intended workflow once `backend/` and `frontend/` exist.
-
 ## Prerequisites
 
 Install these before running the project:
@@ -58,12 +55,62 @@ One seeded user per role (no real passwords — this is a minimal demo auth setu
 
 Use the **switch user** affordance to walk a PO through the whole workflow.
 
+## Demo script — walk a PO through the full workflow
+
+After all three processes are running:
+
+```bash
+# Log in as Alice (creator) and create a PO that needs full approval
+# URL: http://localhost:3000
+# 1. Click "New PO" and submit:
+#      Title:    "New Monitors"
+#      Amount:   1200
+#      Category: IT Equipment
+# → Status becomes PENDING_MANAGER_APPROVAL
+
+# 2. Switch user → bob (MANAGER)
+#    Open the PO → click Approve
+# → Status becomes PENDING_IT_VALIDATION
+
+# 3. Switch user → carol (IT_REP)
+#    Open the PO → click Approve
+# → Status becomes PENDING_FINANCE_APPROVAL
+
+# 4. Switch user → dave (FINANCE)
+#    Open the PO → click Reject, enter comment "wrong budget code"
+# → Status becomes NEEDS_REWORK
+
+# 5. Switch user → alice (CREATOR)
+#    Open the PO → edit amount to 900, click Resubmit
+# → Status becomes PENDING_MANAGER_APPROVAL (workflow restarts)
+
+# 6. Switch user → bob → Approve
+# 7. Switch user → carol → Approve
+# 8. Switch user → dave → Approve
+# → Status becomes INVOICED
+```
+
+Manager-bypass shortcut: create a PO with **amount < 100** (any category except
+IT Equipment) — it skips the Manager and IT stages and lands directly at
+`PENDING_FINANCE_APPROVAL`.
+
 ## Testing
 
 ```bash
 cd backend && ./mvnw test       # unit + integration (needs Docker for Testcontainers)
-cd frontend && npm test         # light component/validation smoke tests
+cd frontend && npm test         # Zod schema validation smoke tests
 ```
+
+## Troubleshooting
+
+| Problem | Fix |
+|---------|-----|
+| **Backend won't start — port 5432 in use** | `docker-compose down` then `docker-compose up -d` |
+| **Flyway migration failure on fresh DB** | The first `spring-boot:run` applies all migrations automatically. If you see a checksum error from a partial previous run, drop the `public` schema and restart: `docker exec -it po_postgres psql -U po -c "DROP SCHEMA public CASCADE; CREATE SCHEMA public;"` |
+| **401 on every API call after login** | The frontend must be served from `localhost:3000` and the backend from `localhost:8080`. Cookies are `SameSite=Lax` — cross-origin requests require the `credentials: 'include'` flag (already set in `frontend/lib/api.ts`). Check that your browser isn't blocking third-party cookies. |
+| **CORS error in browser console** | Ensure the backend CORS config (`WebConfig`) allows `http://localhost:3000`. If you changed the frontend port, update `ALLOWED_ORIGINS` in `WebConfig.java`. |
+| **Testcontainers / backend tests fail — no Docker** | Backend integration tests use Testcontainers, which requires a running Docker daemon. Start Docker Desktop before running `./mvnw test`. |
+| **`npm test` fails — module not found** | Run `npm install` inside the `frontend/` directory first. |
 
 ## Project layout
 

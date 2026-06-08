@@ -15,4 +15,4 @@ It composes the engine (Story 2) into HTTP endpoints and stabilises the contract
 - Bean Validation rejects bad input (missing title, `amount <= 0`, unknown category) with `400` and field details.
 - `PATCH /api/pos/{id}` succeeds only when the PO is `NEEDS_REWORK` and the caller is the creator; otherwise `409`/`403`.
 - Errors use the shape `{ "error": { "code", "message", "details?" } }` with correct HTTP status (`409` illegal transition, `403` guard violation, `404` not found, `400` validation).
-- Depends on Story **POM-02** (workflow engine) and **POM-04** (auth supplies the current user).
+- Depends on Story **POM-7** (workflow engine) and **POM-16** (auth supplies the current user).

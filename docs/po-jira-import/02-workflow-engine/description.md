@@ -15,4 +15,4 @@ This is the load-bearing business logic and the highest test-value code in the p
 - Editing amount/category before resubmit re-gates the workflow (recomputed from current values).
 - Guards enforced: only the role owning the current state may act; a reviewer cannot act on a PO they created; reject requires a non-empty comment; illegal transitions are rejected.
 - Every `submit`/`approve`/`reject`/`resubmit` writes exactly one `po_history` row capturing `fromStatus`, `toStatus`, `action`, `actor`, and `comment`.
-- Depends on Story **POM-01** (entities, enums, persistence).
+- Depends on Story **POM-3** (entities, enums, persistence).

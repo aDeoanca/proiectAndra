@@ -12,7 +12,7 @@
 - `amount` is `BigDecimal` mapped to `DECIMAL(scale 2)` — never `double`/`float`.
 - Enums persisted as `STRING`, not ordinal, so reordering values can't corrupt data.
 - No `DRAFT` and no terminal `REJECTED` status — see ADR-0002.
-- Depends on **POM-01-01** (project scaffold).
+- Depends on **POM-4** (project scaffold).
 
 ## Acceptance
 

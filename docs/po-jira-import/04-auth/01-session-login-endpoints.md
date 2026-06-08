@@ -11,7 +11,7 @@
 
 - No passwords (or a single trivial shared one) — this is demo auth per ADR-0003.
 - Session is server-side (`HttpSession`); cookie is `HttpOnly`, `SameSite=Lax`. Configure CORS to allow credentials from the Next.js origin.
-- Depends on **POM-01-03** (seeded users exist).
+- Depends on **POM-6** (seeded users exist).
 
 ## Acceptance
 

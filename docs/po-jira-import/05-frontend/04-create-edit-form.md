@@ -10,9 +10,9 @@
 
 ## Notes
 
-- The same Zod schema module from POM-05-01 is the single source of client validation truth.
+- The same Zod schema module from POM-20 is the single source of client validation truth.
 - Edit pre-fills from the loaded PO; the form does not expose `status` (server-owned).
-- Depends on **POM-05-01** (client/schema) and **POM-03-01** (create/edit endpoints).
+- Depends on **POM-20** (client/schema) and **POM-12** (create/edit endpoints).
 
 ## Acceptance
 
